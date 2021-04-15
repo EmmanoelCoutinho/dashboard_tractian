@@ -17,6 +17,10 @@ a,button{
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+}
+
 input:focus, button:focus {
   outline: none;
 }
