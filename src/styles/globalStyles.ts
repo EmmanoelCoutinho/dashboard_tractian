@@ -17,7 +17,7 @@ a,button{
   cursor: pointer;
 }
 
-ul {
+li {
   list-style: none;
 }
 
@@ -35,7 +35,10 @@ input:focus, button:focus {
     font-size: 87.5%; /* == 14px */
   }
 }
-  
+
+.heghcharts-background{
+  height: 250px
+}
 `;
 
 export default GlobalStyles;

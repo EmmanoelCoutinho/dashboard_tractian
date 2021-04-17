@@ -8,7 +8,7 @@ export const light = {
 
     // neutro: '#000',
 
-    background: 'FFFFFF'
+    background: '#FFFFFF'
     // hover: '#000',
     // focus: '#000',
     // button: '#000'
