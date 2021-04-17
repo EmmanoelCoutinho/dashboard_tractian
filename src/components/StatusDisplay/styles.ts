@@ -4,29 +4,37 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 100%;
-  height: 20rem;
-  /* place-content: center; */
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
+  width: 100%;
+  height: 24rem;
+  align-items: center;
   margin: 0 auto;
 `;
 
+export const HighchartsContainer = styled.div`
+  color: red;
+`;
+
 export const CaptionContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  text-align: start;
 
   background-color: ${(props) => props.theme.colors.background};
-  height: 2rem;
-  width: 100%;
+  height: 4rem;
+  width: 80%;
+`;
 
-  padding: 0 1rem;
+export const Title = styled.h2`
+  color: ${(props) => props.theme.colors.secundary};
+  padding: 1rem 0;
 `;
 
 export const List = styled.p`
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: blue;
 `;

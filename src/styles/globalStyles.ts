@@ -36,8 +36,8 @@ input:focus, button:focus {
   }
 }
 
-.heghcharts-background{
-  height: 250px
+.MenuItem{
+  color: red;
 }
 `;
 

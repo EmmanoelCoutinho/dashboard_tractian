@@ -4,7 +4,8 @@ import {
   ContainerBodyLeft,
   ContainerInnerLeft,
   ContainerInnerRight,
-  ContainerBodyRight
+  ContainerBodyRight,
+  Title
 } from '../styles/stylesIndex/styles';
 
 import Header from '../components/Header/index';
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
         </ContainerBodyLeft>
         <ContainerBodyRight>
           <ContainerInnerRight>
+            <Title>Saúde dos ativos</Title>
             <HealthDisplay />
           </ContainerInnerRight>
         </ContainerBodyRight>

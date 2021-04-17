@@ -17,20 +17,22 @@ export const ImgLogo = styled.img`
   width: auto;
 `;
 
-export const Profile = styled.div`
+export const Profile = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  width: 9rem;
+  background-color: inherit;
+  border: none;
+
+  width: 8rem;
   height: 100%;
 
-  border: 1px solid red;
-  padding: 0 0rem;
+  padding-right: 0.5rem;
 `;
 
 export const UserImage = styled.img`
-  max-width: 3rem;
+  max-width: 2.2rem;
   width: auto;
 
   border-radius: 50%;
@@ -38,5 +40,5 @@ export const UserImage = styled.img`
 
 export const UserName = styled.p`
   color: ${(props) => props.theme.colors.primary};
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `;

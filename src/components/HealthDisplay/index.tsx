@@ -1,17 +1,20 @@
 import React, { useContext } from 'react';
 
 import { apiContext } from '../../contexts/apiContexts';
+import { ThemeContext } from 'styled-components';
 
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { NONAME } from 'node:dns';
 
 const HealthDisplay: React.FC = () => {
   const { dataAssets } = useContext(apiContext);
+  const { colors } = useContext(ThemeContext);
 
   const components = [];
 
   const takeValue = dataAssets.map((data: any) => {
-    components.push([data.name, data.healthscore]);
+    components.push({ name: data.name, y: data.healthscore, color: colors.secundary });
   });
 
   const options = {
@@ -19,16 +22,22 @@ const HealthDisplay: React.FC = () => {
       type: 'column'
     },
     title: {
-      text: 'Saúde dos seus ativos'
+      text: ''
     },
     xAxis: {
       type: 'category',
       labels: {
         rotation: -48,
         style: {
-          fontSize: '13px',
+          fontSize: '11px',
           fontFamily: 'Verdana, sans-serif'
         }
+      }
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: ''
       }
     },
     legend: {
@@ -51,6 +60,7 @@ const HealthDisplay: React.FC = () => {
           y: 10, // 10 pixels down from the top
           style: {
             fontSize: '12px',
+            textOutline: false,
             fontFamily: 'Verdana, sans-serif'
           }
         }

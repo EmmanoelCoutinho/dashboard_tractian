@@ -5,7 +5,7 @@ import HighchartsReact from 'highcharts-react-official';
 
 import { apiContext } from '../../contexts/apiContexts';
 
-import { Container, CaptionContainer, List } from './styles';
+import { Container, HighchartsContainer, CaptionContainer, Title, List } from './styles';
 
 const StatusDisplay = () => {
   const { dataAssets } = useContext(apiContext);
@@ -38,7 +38,7 @@ const StatusDisplay = () => {
       plotShadow: false
     },
     title: {
-      text: 'Ativos',
+      text: '',
       align: 'center',
       verticalAlign: 'middle',
       style: {
@@ -75,9 +75,10 @@ const StatusDisplay = () => {
         name: '',
         innerSize: '80%',
         data: [
-          { name: 'Ligado', y: filtred.inOperation, color: 'green' },
-          { name: 'Em alerta', y: filtred.inAlert, color: 'red' },
-          { name: 'Desligado', y: filtred.inDowntime, color: 'black' }
+          { name: 'Em Operação', y: filtred.inOperation, color: '#18d217' },
+          { name: 'Em alerta', y: filtred.inAlert, color: '#FFC035' },
+          { name: 'Em Parada', y: filtred.inDowntime, color: '#ff3440' },
+          { name: 'Desligado', y: filtred.undefined, color: '#929292' }
         ]
       }
     ],
@@ -94,11 +95,15 @@ const StatusDisplay = () => {
 
   return (
     <Container>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsContainer>
+        <HighchartsReact highcharts={Highcharts} options={options} />
+      </HighchartsContainer>
+      <Title>ATIVOS: {dataAssets.length}</Title>
       <CaptionContainer>
         <List>Em Alerta: {filtred.inAlert}</List>
-        <List>Desligado: {filtred.inDowntime}</List>
-        <List>Ligado: {filtred.inOperation}</List>
+        <List>Em Parada: {filtred.inDowntime}</List>
+        <List>Em Operação: {filtred.inOperation}</List>
+        <List>Desligado: {filtred.undefined}</List>
       </CaptionContainer>
     </Container>
   );
