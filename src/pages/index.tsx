@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import {
   Container,
   ContainerBody,
@@ -9,14 +11,16 @@ import {
 } from '../styles/stylesIndex/styles';
 
 import Header from '../components/Header/index';
+import NavBar from '../components/NavBar';
 import StatusDisplay from '../components/StatusDisplay/index';
 import HealthDisplay from '../components/HealthDisplay/index';
-import DropDownMenu from '../components/DropDownMenu';
-import NavBar from '../components/NavBar';
 
 const Home: React.FC = () => {
   return (
     <Container>
+      <Head>
+        <title>Dashboard - Tractian</title>
+      </Head>
       <Header />
       <NavBar />
       <ContainerBody>

@@ -1,6 +1,7 @@
 //to solve the provider hell ^^
 import { ApiProvider } from '../contexts/apiContexts';
 import { FiltredProvider } from '../contexts/filtredContext';
+import { adminProvider } from '../contexts/adminContext';
 import { ThemeProvider } from 'styled-components';
 
 const composeProviders = (...providers) => (props) =>
@@ -9,4 +10,9 @@ const composeProviders = (...providers) => (props) =>
     props.children
   );
 
-export const AllProviders = composeProviders(ThemeProvider, ApiProvider, FiltredProvider);
+export const AllProviders = composeProviders(
+  ThemeProvider,
+  ApiProvider,
+  FiltredProvider,
+  adminProvider
+);

@@ -46,8 +46,6 @@ export default class MyDocument extends Document {
             href="https://tractian.com/tractian-favicon-ia.png"
             type="icon image"
           />
-
-          <title>Dashboard - Tractian</title>
         </Head>
         <body>
           <Main />
