@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 
+//material ui imports
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -21,6 +23,7 @@ const Header: React.FC = () => {
     setAnchorEl(null);
   };
 
+  //styling the MenuItem of Material UI
   const StyledMenuItem = withStyles({
     root: {
       background: colors.secundary,
@@ -33,7 +36,7 @@ const Header: React.FC = () => {
     <>
       <Container>
         <ImgLogo alt="logo" src="images/logo.svg" />
-        <Profile aria-crontrols="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        <Profile aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           <UserImage src="images/users.png" />
           <UserName>Gandalf</UserName>
         </Profile>

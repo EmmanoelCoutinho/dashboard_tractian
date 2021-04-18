@@ -12,11 +12,13 @@ import Header from '../components/Header/index';
 import StatusDisplay from '../components/StatusDisplay/index';
 import HealthDisplay from '../components/HealthDisplay/index';
 import DropDownMenu from '../components/DropDownMenu';
+import NavBar from '../components/NavBar';
 
 const Home: React.FC = () => {
   return (
     <Container>
       <Header />
+      <NavBar />
       <ContainerBody>
         <ContainerBodyLeft>
           <ContainerInnerLeft>

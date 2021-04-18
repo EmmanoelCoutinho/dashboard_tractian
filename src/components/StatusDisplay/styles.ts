@@ -12,29 +12,32 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const HighchartsContainer = styled.div`
-  color: red;
-`;
-
 export const CaptionContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  height: 4rem;
+  width: 80%;
 
   text-align: start;
 
   background-color: ${(props) => props.theme.colors.background};
-  height: 4rem;
-  width: 80%;
+  margin-left: 0 auto;
 `;
 
 export const Title = styled.h2`
+  display: flex;
+  align-items: center;
+
   color: ${(props) => props.theme.colors.secundary};
-  padding: 1rem 0;
+  margin: 1rem 0;
 `;
 
 export const List = styled.p`
-  font-size: 1rem;
+  display: flex;
+
+  align-items: center;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: blue;
+  color: ${(props) => props.theme.colors.secundary};
 `;

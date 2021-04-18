@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
+  overflow: hidden;
+
+  width: 100vw;
   height: 4rem;
   background-color: ${(props) => props.theme.colors.secundary};
 

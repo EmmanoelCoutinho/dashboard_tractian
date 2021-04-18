@@ -5,7 +5,6 @@ export const Container = styled.div`
   height: 100%;
 
   text-align: center;
-  overflow-x: hidden;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
 `;
@@ -14,7 +13,7 @@ export const ContainerBody = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 100%;
+  width: 100vw;
   height: 100%;
 `;
 
@@ -24,7 +23,7 @@ export const ContainerBodyLeft = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 40rem;
+  height: 25rem;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
 `;

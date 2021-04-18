@@ -1,109 +1,73 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
+import { AiOutlineRocket } from 'react-icons/ai';
+import { AiOutlinePoweroff } from 'react-icons/ai';
+
+//configs of highcharts
+import { takeContext } from './styles.highcharts';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import { apiContext } from '../../contexts/apiContexts';
+import { FiltredContext } from '../../contexts/filtredContext';
+import { ThemeContext } from 'styled-components';
 
-import { Container, HighchartsContainer, CaptionContainer, Title, List } from './styles';
+import { Container, CaptionContainer, Title, List } from './styles';
 
 const StatusDisplay = () => {
-  const { dataAssets } = useContext(apiContext);
+  const { dataFilterStatus, activesNumber } = useContext(FiltredContext);
+  const { colors } = useContext(ThemeContext);
 
-  const status = [];
-  const filtred = {
+  const { inAlert, inDowntime, inOperation, undefined } = dataFilterStatus();
+
+  const [filtred, setFiltred] = useState({
     inAlert: 0,
     inDowntime: 0,
     inOperation: 0,
     undefined: 0
-  };
-
-  const takeValue = dataAssets.map((data: any) => {
-    status.push(data.status);
   });
 
-  const filter = status.forEach(function (i) {
-    filtred[i] = (filtred[i] || 0) + 1;
-  });
+  useEffect(
+    () =>
+      setFiltred({
+        inAlert: inAlert,
+        inDowntime: inDowntime,
+        inOperation: inOperation,
+        undefined: undefined
+      }),
+    [dataFilterStatus]
+  );
 
-  //set the same value to height and width ind options
-  const square = 200;
-
-  const options = {
-    chart: {
-      width: square,
-      height: square,
-      plotBackgroundColor: null,
-      plotBorderWidth: 0,
-      plotShadow: false
-    },
-    title: {
-      text: '',
-      align: 'center',
-      verticalAlign: 'middle',
-      style: {
-        fontSize: square / 8
-      },
-      y: square / 5
-    },
-    accessibility: {
-      point: {
-        valueSuffix: '%'
-      }
-    },
-    plotOptions: {
-      pie: {
-        dataLabels: {
-          enabled: false,
-          distance: -5,
-          style: {
-            fontWeight: 'bold',
-            color: 'white'
-          }
-        },
-        startAngle: -140,
-        endAngle: 140,
-        center: ['50%', '75%'],
-        size: '95%',
-        y: '50%'
-      }
-    },
-
-    series: [
-      {
-        type: 'pie',
-        name: '',
-        innerSize: '80%',
-        data: [
-          { name: 'Em Operação', y: filtred.inOperation, color: '#18d217' },
-          { name: 'Em alerta', y: filtred.inAlert, color: '#FFC035' },
-          { name: 'Em Parada', y: filtred.inDowntime, color: '#ff3440' },
-          { name: 'Desligado', y: filtred.undefined, color: '#929292' }
-        ]
-      }
-    ],
-    responsive: {
-      rules: [
-        {
-          condition: {
-            maxWidth: 500
-          }
-        }
-      ]
-    }
+  const styles = {
+    margin: '0.5rem',
+    fontSize: '1.2rem'
   };
 
   return (
     <Container>
-      <HighchartsContainer>
-        <HighchartsReact highcharts={Highcharts} options={options} />
-      </HighchartsContainer>
-      <Title>ATIVOS: {dataAssets.length}</Title>
+      <HighchartsReact highcharts={Highcharts} options={takeContext()} />
+
+      <Title>
+        <AiOutlineRocket style={{ color: colors.secundary, fontSize: '1.8rem' }} />
+        {activesNumber} ATIVOS
+      </Title>
+
       <CaptionContainer>
-        <List>Em Alerta: {filtred.inAlert}</List>
-        <List>Em Parada: {filtred.inDowntime}</List>
-        <List>Em Operação: {filtred.inOperation}</List>
-        <List>Desligado: {filtred.undefined}</List>
+        <List>
+          <AiOutlinePoweroff color="#18d217" style={styles} />
+          {filtred.inAlert} Em alerta
+        </List>
+        <List>
+          <AiOutlinePoweroff color="#FFC035" style={styles} />
+          {filtred.inDowntime} Em parada
+        </List>
+        <List>
+          <AiOutlinePoweroff color="#ff3440" style={styles} />
+          {filtred.inOperation} Em operação
+        </List>
+        <List>
+          <AiOutlinePoweroff color="#929292" style={styles} />
+          {filtred.undefined} Desligados
+        </List>
       </CaptionContainer>
     </Container>
   );
