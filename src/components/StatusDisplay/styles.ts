@@ -32,6 +32,11 @@ export const CaptionContainer = styled.div`
 
   background-color: ${(props) => props.theme.colors.background};
   margin-left: 0 auto;
+
+  @media (min-width: 720px) {
+    height: 5rem;
+    width: 60%;
+  }
 `;
 
 export const List = styled.p`

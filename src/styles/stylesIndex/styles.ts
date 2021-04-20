@@ -7,6 +7,11 @@ export const Container = styled.div`
   text-align: center;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
+
+  @media (min-width: 720px) {
+    height: 100vh;
+    overflow: hidden;
+  }
 `;
 
 export const ContainerBody = styled.div`
@@ -15,6 +20,10 @@ export const ContainerBody = styled.div`
 
   width: 100vw;
   height: 100%;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+  }
 `;
 
 export const ContainerBodyLeft = styled.div`
@@ -22,10 +31,15 @@ export const ContainerBodyLeft = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: 50vw;
   height: 25rem;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
+
+  @media (min-width: 720px) {
+    height: 30rem;
+    margin-top: 1.5rem;
+  }
 `;
 
 export const ContainerBodyRight = styled.div`
@@ -33,10 +47,14 @@ export const ContainerBodyRight = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 100%;
+  width: 50vw;
   height: 30rem;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
+
+  @media (min-width: 720px) {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const ContainerInnerLeft = styled.div`

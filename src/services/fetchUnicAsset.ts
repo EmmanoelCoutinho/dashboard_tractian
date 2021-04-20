@@ -8,8 +8,6 @@ export default class fetchAssets {
         url: `/assets/${idAsset}`,
         method: 'GET'
       });
-    } else {
-      console.log('valor ainda n recebido');
     }
   }
 }

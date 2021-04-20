@@ -1,8 +1,9 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
 
-import Header from '../../components/Header/index';
+import Header from '../../components/Header';
 import NavBar from '../../components/NavBar';
+import Insights from '../../components/Insights';
 
 import { adminContext } from '../../contexts/adminContext';
 import { apiContext } from '../../contexts/apiContexts';
@@ -157,6 +158,7 @@ const Assets: React.FC = () => {
             </AssetContainer>
           )}
         </MainContainerInner>
+        <Insights />
       </MainContainer>
     </Container>
   );

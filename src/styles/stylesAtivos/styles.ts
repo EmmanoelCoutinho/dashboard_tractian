@@ -18,6 +18,12 @@ export const MainContainer = styled.div`
 
   width: 100vw;
   height: 100%;
+
+  @media (min-width: 720px) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-right: 2rem;
+  }
 `;
 
 export const MainContainerInner = styled.div`
@@ -30,16 +36,21 @@ export const MainContainerInner = styled.div`
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 
-  height: 90vh;
+  height: 100%;
   width: 94%;
 
   background-color: ${(props) => props.theme.colors.background};
   margin: 0.8rem 0;
+
+  @media (min-width: 720px) {
+    margin: 1rem 1rem;
+  }
 `;
 
 export const Instruction = styled.div`
   width: 80%;
   margin-top: 1.5rem;
+  padding-bottom: 2rem;
 `;
 
 export const InstructionText = styled.p`
@@ -67,6 +78,10 @@ export const AssetContainer = styled.div`
   height: 100%;
 
   padding: 0.5rem 0;
+
+  @media (min-width: 720px) {
+    overflow: auto;
+  }
 `;
 
 export const ImageContainer = styled.div`

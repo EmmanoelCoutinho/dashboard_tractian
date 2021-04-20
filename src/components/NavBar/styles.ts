@@ -11,6 +11,10 @@ export const Container = styled.nav`
   background-color: ${(props) => props.theme.colors.background};
   padding: 0 0.2rem;
   margin-bottom: 0.2rem;
+
+  @media (min-width: 720px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const ActiveButtonLink = styled.button`

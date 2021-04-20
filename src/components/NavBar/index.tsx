@@ -19,7 +19,7 @@ import { Container, ActiveButtonLink, RegularButtonLink, ButtonTitle } from './s
 const StyledFormControl = withStyles({
   root: {
     margin: ' 0 1rem',
-    minWidth: 100,
+    minWidth: 150,
     color: 'white'
   }
 })(FormControl);
