@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   overflow: hidden;
 
@@ -17,30 +17,4 @@ export const Container = styled.header`
 export const ImgLogo = styled.img`
   max-width: 10rem;
   width: auto;
-`;
-
-export const Profile = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background-color: inherit;
-  border: none;
-
-  width: 8rem;
-  height: 100%;
-
-  padding-right: 0.5rem;
-`;
-
-export const UserImage = styled.img`
-  max-width: 2.2rem;
-  width: auto;
-
-  border-radius: 50%;
-`;
-
-export const UserName = styled.p`
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 1.4rem;
 `;

@@ -12,6 +12,14 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const Title = styled.h2`
+  display: flex;
+  align-items: center;
+
+  color: ${(props) => props.theme.colors.secundary};
+  margin: 1rem 0;
+`;
+
 export const CaptionContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -19,18 +27,11 @@ export const CaptionContainer = styled.div`
   height: 4rem;
   width: 80%;
 
+  overflow: hidden;
   text-align: start;
 
   background-color: ${(props) => props.theme.colors.background};
   margin-left: 0 auto;
-`;
-
-export const Title = styled.h2`
-  display: flex;
-  align-items: center;
-
-  color: ${(props) => props.theme.colors.secundary};
-  margin: 1rem 0;
 `;
 
 export const List = styled.p`

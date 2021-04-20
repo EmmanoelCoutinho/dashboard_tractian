@@ -1,9 +1,6 @@
 import { ReactNode, createContext, useCallback, useEffect, useState } from 'react';
 
-import fetchUser from '../services/fetchUsers';
-import fetchUnits from '../services/fetchUnits';
 import fetchAssets from '../services/fetchAssets';
-import fetchCompanies from '../services/fetchCompanies';
 
 interface Iexports {
   dataAssets: any;
@@ -18,6 +15,7 @@ export const apiContext = createContext({} as Iexports);
 export function ApiProvider({ children }: IapiProviderProps) {
   const [dataAssets, setDataAssets] = useState([]);
 
+  //ASSETS CALL
   const GetAssets = useCallback(async () => {
     const response = new fetchAssets();
     try {

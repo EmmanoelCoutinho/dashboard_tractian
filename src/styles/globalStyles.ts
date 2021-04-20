@@ -6,6 +6,11 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
   font-family: 'Oswald', sans-serif;
+   
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
