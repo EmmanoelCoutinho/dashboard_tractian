@@ -17,6 +17,7 @@ export const Container = styled.div`
 export const ContainerBody = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   width: 100vw;
   height: 100%;
@@ -31,12 +32,13 @@ export const ContainerBodyLeft = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 50vw;
+  width: 94%;
   height: 25rem;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
 
   @media (min-width: 720px) {
+    width: 50vw;
     height: 30rem;
     margin-top: 1.5rem;
   }
@@ -47,12 +49,13 @@ export const ContainerBodyRight = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 50vw;
+  width: 96%;
   height: 30rem;
 
   background-color: ${(props) => props.theme.colors.tertiaty};
 
   @media (min-width: 720px) {
+    width: 50vw;
     margin-top: 1.5rem;
   }
 `;

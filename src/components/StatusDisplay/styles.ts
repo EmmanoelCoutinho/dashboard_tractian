@@ -25,13 +25,13 @@ export const CaptionContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 4rem;
-  width: 80%;
+  width: 90%;
 
   overflow: hidden;
   text-align: start;
 
   background-color: ${(props) => props.theme.colors.background};
-  margin-left: 0 auto;
+  margin: 0 auto;
 
   @media (min-width: 720px) {
     height: 5rem;

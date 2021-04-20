@@ -43,6 +43,7 @@ export const InsightsBlocks = styled.div`
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 
   padding: 0 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const InsightsIcon = styled.div`
@@ -72,6 +73,7 @@ export const InsightsTexts = styled.div`
 
 export const InsightsTitle = styled.h2`
   color: black;
+  font-size: 1.2rem;
 `;
 
 export const InsightsData = styled.p`
